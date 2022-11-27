@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KTZ</title>
+    <link rel="icon" href="./img/header__logo.svg" type="image/icon type">
+    <link rel="stylesheet" href="./styles/global.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('5w96FWMwQ1fYL78UX');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_8rf4mpo', 'template_d5xfffa', this)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                        const modal2 = document.querySelector(".modal-window")
+                        if(modal2.style.display === "flex"){
+                            modal2.style.display = "none"
+                        }
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <style>
+        *, *:after, *:before { 
+	box-sizing: border-box; 
+}
+.clearfix:before, .clearfix:after { 
+	content: ''; 
+	display: table; 
+}
+.clearfix:after { 
+	clear: both; 
+}
+.categories__content{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.hover-text-one {
+	overflow: hidden;
+	margin: 0;
+	width: 33.33%;
+    height: 250px;
+	list-style: none;
+	text-align: center;
+    border-radius: 50px;
+}
+.hover-text-one figure {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	overflow: hidden;
+	background: #527c82;
+	text-align: center;
+	cursor: pointer;
+}
+.hover-text-one figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	opacity: 0.8;
+}
+.hover-text-one figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.hover-text-one figure figcaption::before,
+.hover-text-one figure figcaption::after {
+	pointer-events: none;
+}
+.hover-text-one figure figcaption{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.hover-text-one figure h3 {
+	/* word-spacing: -0.35em; */
+	font-weight: 300;
+    font-size: smaller;
+}
+.hover-text-one figure h3 span {
+	font-weight: 800;
+}
+.hover-text-one figure h3,
+.hover-text-one figure p {
+	margin: 0;
+}
+.hover-text-one figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* Эффект при наведении */
+figure.effect-text-one img {
+	width: -webkit-calc(100% + 50px);
+	width: calc(100% + 100px);
+	opacity: 0.7;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	transform: scale(1.2);
+}
+figure.effect-text-one figcaption {
+	top: auto;
+	bottom: 0;
+	text-align: left;
+}
+figure.effect-text-one h3,
+figure.effect-text-one p {
+	-webkit-transform: translate3d(0,40px,0);
+	transform: translate3d(0,40px,0);
+}
+figure.effect-text-one h3 {
+	color: white !important;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+}
+figure.effect-text-one p {
+	background: rgba(0,0,0,0.6);
+	color: #fff;
+  padding: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+  transition: opacity 0.2s, transform 0.35s;  
+  font-size: smaller;
+}
+figure.effect-text-one:hover img,
+figure.effect-text-one:hover p {
+	opacity: 1;
+}
+figure.effect-text-one:hover img,
+figure.effect-text-one:hover h3,
+figure.effect-text-one:hover p {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+figure.effect-text-one:hover p {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+	-webkit-transition-duration: 0.35s;
+	transition-duration: 0.35s;
+}
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="./index.html">
+                    <img class="header__logo" src="./img/header__logo.svg" alt="" />
+                </a>
+
+                <div class="header__middle-nav">
+                    <ul class="middle__nav">
+                        <li><a class="nav__item" href="#production">Продукция</a></li>
+                        <li>
+                            <a class="nav__item" href="#trust__id">Нам доверяют</a>
+                        </li>
+                        <li><a class="nav__item" href="#contacts__id">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="header__right-nav">
+                    <ul class="right__nav">
+                        <li><a class="nav__item" href="">RU</a></li>
+                        <li><a class="nav__item" href="">KG</a></li>
+                        <li><a class="nav__item" href="">EN</a></li>
+                    </ul>
+                </div>
+                <div class="burger"></div>
+            </div>
+        </div>
+        <div class="menu" style="display: none;">
+            <div class="menu-middle-nav">
+                <ul class="menu-nav">
+                    <li><a class="menu-item" href="./index.html">Продукция</a></li>
+                    <li>
+                        <a class="menu-item" href="./index.html">Нам доверяют</a>
+                    </li>
+                    <li><a class="menu-item" href="./index.html">Контакты</a></li>
+                </ul>
+                <ul class="menu-lang">
+                    <li><a class="menu-item" href="#">RU</a></li>
+                    <li><a class="menu-item" href="#">KG</a></li>
+                    <li><a class="menu-item" href="#">EN</a></li>
+                </ul>
+            </div>
+            <div class="burger-closed">
+                <div class="burger-closed-btn"></div>
+            </div>
+        </div>
+    </header>
+    <section class="header1">
+        <div class="modal-window-closed"></div>
+        <div class="modal-window" style="display: none">
+            <form id="contact-form" style="width: 100%;">
+                <h2 class="modal-window-h2">Обратная связь</h2>
+                <input class="modal-window-input" placeholder="Имя" type="text" name="user_name" />
+                <input class="modal-window-input" placeholder="Номер телефона" type="text" name="contact_number"/>
+                <input class="modal-window-input" placeholder="Email" type="text" name="user_email" />
+                <textarea class="modal-window-input-2" placeholder="Сообщение" name="message"></textarea>
+                <button class="modal-button" type="submit">Отправить</button>
+            </form>
+        </div>
+        <div class="sec-1-title">
+            <div style="margin-top:100px;">
+                <h1 class="sec-1-title-h1">
+                    Мы соответствуем международным стандартам имеем
+                    уникальные технологии и опыт
+                </h1>
+                <p class="sec-1-title-p">
+                    Мы несем энергию, тепло и свет в ваши дома
+                </p>
+            </div>
+            <div>
+                <button class="button-1" id="button-1">
+                    Связаться <br />
+                    с <br />
+                    директором
+                </button>
+            </div>
+        </div>
+
+        <div class="slider">
+            <div class="slider-item">
+                <img src="./img/alpha.jpg" alt="" />
+            </div>
+            <div class="slider-item">
+                <img src="./img/elec_b.jpg" alt="" />
+            </div>
+            <div class="slider-item">
+                <img src="./img/3slider.jpg" alt="" />
+            </div>
+        </div>
+    </section>
+    <main>
+
+        <section class="categories">
+            <div class="container">
+                <div class="categories__content">
+                    <div class="hover-text-one">
+                        <a href="./trans.html">
+                            <figure class="effect-text-one">
+                                <img src="/img/light__icon.png" alt=""/>
+                                  <figcaption>
+                                <h3>Трансформатор ТМГ</h3>
+                             
+                                  </figcaption>			
+                               </figure>
+                        </a>
+                      </div>
+                      <div class="hover-text-one">
+                       <a href="./trans2.html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3> Трансформатор ТМГ33 Х3К2 (класс энергоэффективности Х3К2)</h3>
+                       
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                      <div class="hover-text-one">
+                        <a href="./tmg11.html">
+                            <figure class="effect-text-one">
+                                <img src="/img/light__icon.png" alt=""/>
+                                  <figcaption>
+                                <h3>Трансформатор ТМГ 11</h3>
+                             
+                                  </figcaption>			
+                               </figure>
+                        </a>
+                      </div>
+                      <div class="hover-text-one">
+                       <a href="./tmg21.html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3>Трансформатор ТМГ 21</h3>
+                          
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                </div>
+                <div class="categories__content">
+                    <div class="hover-text-one">
+                       <a href="./tmg21(3200).html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3>Трансформатор ТМГ21 3200 кВА</h3>
+                
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                      <div class="hover-text-one">
+                        <a href="./Tmgsu.html">
+                            <figure class="effect-text-one">
+                                <img src="/img/light__icon.png" alt=""/>
+                                  <figcaption>
+                                <h3>Трансформаторы ТМГСУ и ТМГСУ11 с симметрирующим устройством</h3>
+                               
+                                  </figcaption>			
+                               </figure>
+                        </a>
+                      </div>
+                      <div class="hover-text-one">
+                        <a href="./tmg12.html">
+                            <figure class="effect-text-one">
+                                <img src="/img/light__icon.png" alt=""/>
+                                  <figcaption>
+                                <h3>Трансформатор ТМГ12 (Класс энергоэффективности Х2К1)</h3>
+                             
+                                  </figcaption>			
+                               </figure>
+                        </a>
+                      </div>
+                      <div class="hover-text-one">
+                       <a href="./tmg32.html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3>Трансформатор ТМГ32 (Класс энергоэффективности Х2К1)</h3>
+                        
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                </div>
+                <div class="categories__content">
+                    <div class="hover-text-one">
+                       <a href="./tmg33.html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3>Трансформатор ТМГ33 (класс энергоэффективности Х2К2)
+  
+                              Данная серия трансформаторов была</h3>
+                       
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                      <div class="hover-text-one">
+                       <a href="./Tmgsu.html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3>Трансформаторы ТМГСУ и ТМГСУ11 с симметрирующим устройством</h3>
+                          
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                      <div class="hover-text-one">
+                       <a href="./tmeg.html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3>Трансформаторы ТМЭГ и ТМБГ</h3>
+                       
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                      <div class="hover-text-one">
+                       <a href="./omg.html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3>Трансформаторы ОМ, ОМП, ОМГ (однофазные)</h3>
+                         
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                      
+                </div>
+                <div class="categories__content">
+                    <div class="hover-text-one">
+                       <a href="./tmpn.html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3>Трансформаторы ТМПН и ТМПНГ на напряжение 0,38 кВ</h3>
+                      
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                   
+                      <div class="hover-text-one">
+                        <a href="./tmpn(10kv).html">
+                            <figure class="effect-text-one">
+                                <img src="/img/light__icon.png" alt=""/>
+                                  <figcaption>
+                                <h3>Трансформаторы ТМПН и ТМПНГ с первичным напряжением 6; 10 кВ</h3>
+                            
+                                  </figcaption>			
+                               </figure>
+                        </a>
+                      </div>
+                      <div class="hover-text-one">
+                       <a href="tmpn(1200).html">
+                        <figure class="effect-text-one">
+                            <img src="/img/light__icon.png" alt=""/>
+                              <figcaption>
+                            <h3>Трансформатор ТМПНГ 1200/6-УХЛ1</h3>
+                       
+                              </figcaption>			
+                           </figure>
+                       </a>
+                      </div>
+                      <div class="hover-text-one">
+                        <a href="tmto.html">
+                            <figure class="effect-text-one">
+                                <img src="/img/light__icon.png" alt=""/>
+                                  <figcaption>
+                                <h3>Специальный трансформатор ТМТО</h3>
+                        
+                                  </figcaption>			
+                               </figure>
+                        </a>
+                      </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts__id" class="contacts">
+            <div class="container contacts__center">
+                <h3 class="contacts__title">Контакты</h3>
+                <div class="contacts__content">
+                    <div class="contacts__left">
+                        <div class="contact__adress">
+                            <img src="./img/MapPin.svg" alt="" />
+                            <div class="contact__text">
+                                Кыргызская Республика, г.Бишкек, ул.
+                                Камская 1, 18
+                            </div>
+                        </div>
+                        <div class="contact__number">
+                            <img src="./img/Phone.svg" alt="" />
+                            <div class="contact__text">
+                                +996 702 000 943
+                                <br>
+                                +996 777 000 943
+                            </div>
+                        </div>
+                        <div class="contact__email">
+                            <img src="./img/Envelope.svg" alt="" />
+                            <div class="contact__text">
+                                ktz-tech@proton.me
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts__right">
+                        <img class="contacts__right-img" src="./img/contacts.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__right">
+                    <img class="header__logo" src="./img/header__logo.svg" alt="" />
+                </div>
+                <div>
+                    <ul class="footer__list">
+                        <li>
+                            <a class="footer__item" href="#production">Продукция</a>
+                        </li>
+                        <li>
+                            <a class="footer__item" href="#trust__id">Нам доверяют</a>
+                        </li>
+                        <li>
+                            <a class="footer__item" href="#contacts__id">Контакты</a>
+                        </li>
+                    </ul>
+                    <p class="footer__text">
+                        Copyright © 2022 Все права защищены
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/slick.min.js"></script>
+<script src="../js/index.js"></script>
+
+</html>

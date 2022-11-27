@@ -4,6 +4,10 @@
   left: 0;
   right: 0;
   z-index: 99;
+  height: 165px;
+  background: #ffffff74;
+  overflow: hidden;
+ 
 }
 .header__logo{
   width: 200px;
@@ -14,6 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+ 
 }
 
 .middle__nav{

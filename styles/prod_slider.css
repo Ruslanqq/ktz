@@ -1,0 +1,54 @@
+.prod__slider{
+    background: white;
+    border-radius: 20px;
+    margin-top: 100px;
+}
+
+.slider__content{
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+.slider__img{
+    padding-bottom: 50px;
+}
+.slider__title{
+    text-align: center;
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 41px;
+    color: #222222;
+    padding-bottom: 30px;
+    max-width: 70%;
+    margin: 0 auto;
+}
+.slider__prod-text{
+    font-family: 'Overpass';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+
+color: #222222;
+}
+
+.slider__img{
+    width: 350px;
+    height: 350px;
+}
+
+@media (max-width: 768px) {
+    .slider__content{
+        text-align: center;
+    }
+    .slider__img{
+        max-width: 80%;
+    }
+    .slider__prod-text{
+        text-align: center;
+        max-width: 98%;
+    }
+}

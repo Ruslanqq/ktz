@@ -1,7 +1,18 @@
 $(document).ready(function(){
     $('.slider').slick({
         arrows: false,
-        dots: true,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 800,
+        autoplay: true,
+        autoplaySpeed: 1500,
+    });
+});
+$(document).ready(function(){
+    $('.prod__slider').slick({
+        arrows: false,
+        dots: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         speed: 1000,
@@ -31,6 +42,15 @@ const btn = $("#button-1").on("click", () => {
     }
 })
 const menu1 = document.querySelector(".menu")
+
+menu1.addEventListener("click", () => {
+    if(menu1.style.display === "none"){
+        menu1.style.display = "flex"
+    }else{
+        menu1.style.display = "none"
+    }
+})
+
 
 const menu2 = $(".burger").on("click", () => {
     if(menu1.style.display === "none"){
