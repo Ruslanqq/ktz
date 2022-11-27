@@ -411,12 +411,15 @@ html{
         font-size: calc(32 / 744 * 100vw);
     }
     .trans__img{
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
     }
     .trans__content{
         flex-direction: column;
-        padding-left: 200px;
+        padding-left: 300px;
+    }
+    .trans__text{
+        width: 100%;
     }
 
     .trans__information{
@@ -433,13 +436,15 @@ html{
 
 @media (max-width: 430px) {
     .trans__img{
-        width: 300px;
-        height: 300px;
+        margin-left: -30px;
+        width: 200px;
+        height: 200px;
     }
     .trans__content{
-        flex-direction: column;
         padding-left: 100px;
+        flex-direction: column;
         width: 100%;
+        margin-top: 200px;
     }
 
     .trans__title{
